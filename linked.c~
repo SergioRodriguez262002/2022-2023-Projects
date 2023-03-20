@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct node {
+
+  int value;
+  struct node* next; // Cannot name this next node LinkedList*
+  // because typedef LinkedList doesnt exists yet
+} LinkedList;
+
+LinkedList* llCreate(){
+  return NULL;
+}
+
+void llDisplay(LinkedList* l){
+  LinkedList* p = 1;
+  while(p != NULL){
+    printf("%d, \n", p->value);
+    
+  }
+}
+
+void llAdd(ll, int value){
+  
+}
+
+int main(){
+
+  LinkedList ll = llCreate();
+  llDisplay(ll);
+  llAdd(ll, 2);
+  
+}

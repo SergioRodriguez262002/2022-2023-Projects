@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main(){
+
+  // Comment
+  /* multiline comments */
+  
+  printf("Hello World");
+  
+
+  int a;
+  double b = 3.2;
+
+  a = 5;
+  
+  // C boolean 0 - False  anything not 0 - True
+
+  // %d, %f, %lf, %c, 
+  printf("Value of a is %d %lf\n", a, b);
+
+
+  printf("test 1\n");
+  
+  return 0;
+}

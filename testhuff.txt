@@ -1,0 +1,8 @@
+dukeXblueXdevils
+
+
+Open MP lab 
+
+Parallel 
+For schedule 
+Reduction 

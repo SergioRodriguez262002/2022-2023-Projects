@@ -1,0 +1,159 @@
+#include <stdio.h>
+
+//void readScores(struct* arr);
+  // The function returns void so the parameters
+  // are the pointers that change whats in the main
+  // see the swap function for more information
+
+//void displayScores(struct* arr); // Function prototype for disp only
+
+struct hist{ int id; int frq; char st;};
+void readScores(struct hist *s, int num){
+
+  for(int i = 0; i < 11; i++){
+    //printf("test for null %c\n", s->st);
+    //s->id = 5;
+    //s->frq = 6;
+
+    /* if(s->id == num){
+      s->frq++;
+      break;
+    }
+    
+    for(int x = 0; x < 11; x++){
+      
+      
+    }*/
+
+    //    printf("numread %d\n", num);
+
+    if(s[i].id == num){
+      s[i].frq++;
+      return;
+    }
+
+    
+
+    //s->id = 5;
+    //    s->frq = 7;
+
+    //printf("test\n");
+    //printf("s id  %d\n", *s);
+    //printf("s frq %d\n", *s);
+    
+    //s++;
+  }
+
+  //  printf("end of loop reached as %d\n", num);
+
+  // If the loop doesnt detect a number it has seen before
+  for(int i = 0; i < 11; i++){
+    if(s[i].st == 'e'){
+      s[i].st = 'f';
+      s[i].id = num;
+      s[i].frq = 1;
+      return;
+    }
+  }
+
+  
+}
+
+void displayScores(int* arr, int size){
+  for(int i = 0; i < size; i++){
+    printf("score %d: %d\n", i, arr[i]);
+  }
+}
+
+void displayHistogram(struct hist *s){
+  // clean the histogram
+  while(s->st != 'e'){
+    printf("value %d: freq %d\n", s->id, s->frq);
+    s++;
+  }
+}
+
+void sortHistogram(struct hist *s, int size){
+  struct temp{ int id; int frq; char st;};
+
+  struct temp sort[10];
+  
+  int count = 0;
+  for(int i = 1; i < 4; i++){
+    for(int x = 0; x < 2; x++){
+
+      printf("check for %d\n", i);
+
+      for(int y = 0; y < size; y++){
+	if(i == s[y].frq){
+	  sort[count].frq = i;
+	  sort[count].id = s[y].id;
+	  count++;
+	}
+      }
+
+
+      
+    }
+    
+  }
+
+  for(int i = 0; i < 6; i++){
+    printf("sort %d\n",sort[i].frq);
+  }
+  
+}
+
+int main() {
+  // Place functions below main and creata prototypes
+  // Cannot use global variables
+
+  int testInteger;
+  struct hist freq[11];
+
+  for(int i = 0; i < 11; i++){
+    //freq->id = NULL;
+    //freq->frq = NULL;
+    freq[i].st = 'e';
+  }
+
+  //  readScores(&freq, 5);
+  
+  
+  //scanf("%d\n", &testInteger);
+
+  //printf("test integer %d\n", testInteger);
+
+  int scores[100];
+
+  int count = 0;
+  while(scanf("%d\n", &testInteger) != EOF){
+    //printf("read %d\n", testInteger);
+    readScores(&freq, testInteger);
+    scores[count] = testInteger;
+    count++;
+   }
+
+  displayScores(scores,count);
+  displayHistogram(freq);
+  sortHistogram(freq, 6);
+  
+
+ 
+
+  //  readScores(&freq);
+
+  printf(" test run of freq disp\n");
+
+  /*  for(int i = 0; i < 10; i++){
+  printf("test id %d\n", freq[i].id);
+  printf("test frq %d\n", freq[i].frq);
+  printf("test st %c\n\n", freq[i].st);
+  } */
+  
+  return 0;
+  
+  
+}
+
+

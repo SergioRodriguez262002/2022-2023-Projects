@@ -1,0 +1,13 @@
+// g++ heromain.cc Superhero.cc -std=c++11 -o hero
+// The c++11 is to switch to the 2011 defns so we can use "auto"
+#include <iostream>
+#include <vector>
+#include <string>
+#include "Superhero.h"
+
+class Superhero {     // The class
+  public:           // Access specifier
+    Superhero() {     // Constructor
+      cout << "Hello World!";
+    }
+};
